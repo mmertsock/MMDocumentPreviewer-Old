@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MMDocFormatter.h"
+
 @interface MMDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id <MMDocFormatter> detailItem;
+@property (weak, nonatomic) IBOutlet UITextView *outputTextView;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

@@ -33,10 +33,9 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        NSString *raw = @"# Heading 1\n\nBody text goes *here*.\n\n##\n\n## Heading 2\n\nA [link](http://www.example.com) is here.\n";
+        self.outputTextView.attributedText = [self.detailItem attributedStringForString:raw];
     }
 }
 

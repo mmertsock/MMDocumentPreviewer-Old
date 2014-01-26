@@ -7,12 +7,13 @@
 //
 
 #import "MMMasterViewController.h"
-
+#import "MMDocFormatter.h"
 #import "MMDetailViewController.h"
 
-@interface MMMasterViewController () {
-    NSMutableArray *_objects;
-}
+#import "MMAttributedStringMarkdownParserFormatter.h"
+
+@interface MMMasterViewController ()
+@property NSArray *formatters;
 @end
 
 @implementation MMMasterViewController
@@ -29,7 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.formatters = @[
+                        [MMAttributedStringMarkdownParserFormatter new]
+                        ];
     self.detailViewController = (MMDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -48,22 +51,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return self.formatters.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    id <MMDocFormatter> formatter = self.formatters[indexPath.row];
+    cell.textLabel.text = formatter.formatterName;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = _objects[indexPath.row];
+        id <MMDocFormatter> object = self.formatters[indexPath.row];
         self.detailViewController.detailItem = object;
     }
 }
@@ -72,7 +75,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        id <MMDocFormatter> object = self.formatters[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

@@ -28,6 +28,7 @@
 }
 
 - (NSAttributedString *)attributedStringForString:(NSString *)string
+                                            error:(__autoreleasing NSError **)error
 {
     return [self.markdownParser attributedStringFromMarkdownString:string];
 }

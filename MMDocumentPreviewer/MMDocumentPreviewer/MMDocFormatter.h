@@ -12,6 +12,7 @@
 
 @property (readonly) NSString *formatterName;
 
-- (NSAttributedString *)attributedStringForString:(NSString *)string;
+- (NSAttributedString *)attributedStringForString:(NSString *)string
+                                            error:(__autoreleasing NSError **)error;
 
 @end

@@ -11,6 +11,7 @@
 #import "MMDetailViewController.h"
 
 #import "MMAttributedStringMarkdownParserFormatter.h"
+#import "MMMarkdownFormatter.h"
 
 @interface MMMasterViewController ()
 @property NSArray *formatters;
@@ -31,7 +32,8 @@
 {
     [super viewDidLoad];
     self.formatters = @[
-                        [MMAttributedStringMarkdownParserFormatter new]
+                        [MMAttributedStringMarkdownParserFormatter new],
+                        [MMMarkdownFormatter new]
                         ];
     self.detailViewController = (MMDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }

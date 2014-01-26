@@ -35,7 +35,13 @@
 {
     if (self.detailItem) {
         NSString *raw = @"# Heading 1\n\nBody text goes *here*.\n\n##\n\n## Heading 2\n\nA [link](http://www.example.com) is here.\n";
-        self.outputTextView.attributedText = [self.detailItem attributedStringForString:raw];
+        NSError *error = nil;
+        self.outputTextView.attributedText = [self.detailItem attributedStringForString:raw
+                                                                                  error:&error];
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Parsing Failed" message:error.description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
     }
 }
 

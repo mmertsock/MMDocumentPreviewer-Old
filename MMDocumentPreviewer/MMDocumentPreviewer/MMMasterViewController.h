@@ -12,6 +12,9 @@
 
 @interface MMMasterViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *URLtextField;
 @property (strong, nonatomic) MMDetailViewController *detailViewController;
+
+- (IBAction)URLtextFieldChanged:(id)sender;
 
 @end

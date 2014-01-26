@@ -7,6 +7,7 @@
 //
 
 #import "MMMarkdownFormatter.h"
+#import "NSString+MMFormatterUtils.h"
 #import <MMMarkdown.h>
 
 @interface MMMarkdownFormatter ()
@@ -24,17 +25,7 @@
 {
     NSString *HTML = [MMMarkdown HTMLStringWithMarkdown:string error:error];
     if (error && *error) return nil;
-    
-    NSData *data = [HTML dataUsingEncoding:NSUTF8StringEncoding];
-
-    id attrString = [[NSAttributedString alloc]
-                     initWithData:data
-                     options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                               NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-                     documentAttributes:nil
-                     error:error];
-    
-    return attrString;
+    return [HTML attributedStringFromHTMLStringError:error];
 }
 
 @end

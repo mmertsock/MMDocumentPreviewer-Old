@@ -2,3 +2,5 @@ platform :ios, '7.0'
 
 pod 'NSAttributedStringMarkdownParser'
 pod 'MMMarkdown'
+#pod 'OCDiscount' # not compiling for iOS
+pod 'sundown'

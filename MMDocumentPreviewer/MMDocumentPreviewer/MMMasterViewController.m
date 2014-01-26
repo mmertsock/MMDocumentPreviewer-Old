@@ -12,8 +12,10 @@
 
 #import "MMAttributedStringMarkdownParserFormatter.h"
 #import "MMMarkdownFormatter.h"
+#import "MMSundownFormatter.h"
 
 @interface MMMasterViewController ()
+@property NSURL *documentURL;
 @property NSArray *formatters;
 @end
 
@@ -31,17 +33,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.documentURL = [[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"md"];
+    self.URLtextField.text = self.documentURL.absoluteString;
     self.formatters = @[
                         [MMAttributedStringMarkdownParserFormatter new],
-                        [MMMarkdownFormatter new]
+                        [MMMarkdownFormatter new],
+                        [MMSundownFormatter new]
                         ];
     self.detailViewController = (MMDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController.documentURL = self.documentURL;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)URLtextFieldChanged:(id)sender
+{
+    self.documentURL = [NSURL URLWithString:self.URLtextField.text];
+    self.detailViewController.documentURL = self.documentURL;
 }
 
 #pragma mark - Table View
@@ -78,6 +90,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         id <MMDocFormatter> object = self.formatters[indexPath.row];
+        [[segue destinationViewController] setDocumentURL:self.documentURL];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

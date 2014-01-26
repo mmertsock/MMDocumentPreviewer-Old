@@ -28,14 +28,23 @@
 
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
+}
+
+- (void)setDocumentURL:(NSURL *)documentURL
+{
+    if (![_documentURL isEqual:documentURL]) {
+        _documentURL = documentURL;
+        [self configureView];
+    }
 }
 
 - (void)configureView
 {
-    if (self.detailItem) {
-        NSString *raw = @"# Heading 1\n\nBody text goes *here*.\n\n##\n\n## Heading 2\n\nA [link](http://www.example.com) is here.\n";
+    if (self.detailItem && self.documentURL) {
         NSError *error = nil;
+        NSString *raw = [NSString stringWithContentsOfURL:self.documentURL usedEncoding:NULL error:&error];
+        
         self.outputTextView.attributedText = [self.detailItem attributedStringForString:raw
                                                                                   error:&error];
         if (error) {

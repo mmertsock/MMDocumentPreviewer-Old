@@ -3,14 +3,17 @@ PODS:
   - MMMarkdown (0.2.3)
   - NSAttributedStringMarkdownParser (0.0.1):
     - fmemopen
+  - sundown (0.1.0)
 
 DEPENDENCIES:
   - MMMarkdown
   - NSAttributedStringMarkdownParser
+  - sundown
 
 SPEC CHECKSUMS:
   fmemopen: 9985c0b5696288ac034514edc2eeaea6e5ae77ca
   MMMarkdown: 1775ba63d27e999aedecf75f58153243e1778ea0
   NSAttributedStringMarkdownParser: fb93a47c4be94a80f4bd5e81dd8067cce5f7f5eb
+  sundown: f0b86bd08ee36f84e9e6a6332d3cbd0309889dfa
 
 COCOAPODS: 0.25.0

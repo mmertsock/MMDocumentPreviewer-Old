@@ -13,6 +13,7 @@
 @interface MMDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id <MMDocFormatter> detailItem;
+@property (copy, nonatomic) NSURL *documentURL;
 @property (weak, nonatomic) IBOutlet UITextView *outputTextView;
 
 @end

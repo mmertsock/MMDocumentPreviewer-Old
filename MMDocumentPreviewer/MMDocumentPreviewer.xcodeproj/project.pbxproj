@@ -25,6 +25,9 @@
 		270CE9DE18945C0A002A6E7B /* MMDocumentPreviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9DD18945C0A002A6E7B /* MMDocumentPreviewerTests.m */; };
 		270CE9EA18948C6F002A6E7B /* MMAttributedStringMarkdownParserFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9E918948C6F002A6E7B /* MMAttributedStringMarkdownParserFormatter.m */; };
 		270CE9ED18949139002A6E7B /* MMMarkdownFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9EC18949139002A6E7B /* MMMarkdownFormatter.m */; };
+		270CE9F0189497B8002A6E7B /* NSString+MMFormatterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9EF189497B8002A6E7B /* NSString+MMFormatterUtils.m */; };
+		270CE9F31894AAB1002A6E7B /* MMSundownFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9F21894AAB1002A6E7B /* MMSundownFormatter.m */; };
+		270CE9F51894ACC3002A6E7B /* sample.md in Resources */ = {isa = PBXBuildFile; fileRef = 270CE9F41894ACC3002A6E7B /* sample.md */; };
 		81738BF7D65644ACB5AA53D5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9E70B016E45CC80032B14 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,11 @@
 		270CE9E918948C6F002A6E7B /* MMAttributedStringMarkdownParserFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAttributedStringMarkdownParserFormatter.m; sourceTree = "<group>"; };
 		270CE9EB18949139002A6E7B /* MMMarkdownFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMarkdownFormatter.h; sourceTree = "<group>"; };
 		270CE9EC18949139002A6E7B /* MMMarkdownFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMarkdownFormatter.m; sourceTree = "<group>"; };
+		270CE9EE189497B8002A6E7B /* NSString+MMFormatterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MMFormatterUtils.h"; sourceTree = "<group>"; };
+		270CE9EF189497B8002A6E7B /* NSString+MMFormatterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MMFormatterUtils.m"; sourceTree = "<group>"; };
+		270CE9F11894AAB1002A6E7B /* MMSundownFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSundownFormatter.h; sourceTree = "<group>"; };
+		270CE9F21894AAB1002A6E7B /* MMSundownFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSundownFormatter.m; sourceTree = "<group>"; };
+		270CE9F41894ACC3002A6E7B /* sample.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.md; sourceTree = "<group>"; };
 		DBE9E70B016E45CC80032B14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56CD2D5E53B495D9B97CF73 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,7 +152,12 @@
 				270CE9EC18949139002A6E7B /* MMMarkdownFormatter.m */,
 				270CE9C418945C0A002A6E7B /* MMMasterViewController.h */,
 				270CE9C518945C0A002A6E7B /* MMMasterViewController.m */,
+				270CE9F11894AAB1002A6E7B /* MMSundownFormatter.h */,
+				270CE9F21894AAB1002A6E7B /* MMSundownFormatter.m */,
+				270CE9EE189497B8002A6E7B /* NSString+MMFormatterUtils.h */,
+				270CE9EF189497B8002A6E7B /* NSString+MMFormatterUtils.m */,
 				270CE9B318945C0A002A6E7B /* Supporting Files */,
+				270CE9F41894ACC3002A6E7B /* sample.md */,
 			);
 			path = MMDocumentPreviewer;
 			sourceTree = "<group>";
@@ -259,6 +272,7 @@
 			files = (
 				270CE9C318945C0A002A6E7B /* Main_iPad.storyboard in Resources */,
 				270CE9CB18945C0A002A6E7B /* Images.xcassets in Resources */,
+				270CE9F51894ACC3002A6E7B /* sample.md in Resources */,
 				270CE9C018945C0A002A6E7B /* Main_iPhone.storyboard in Resources */,
 				270CE9B718945C0A002A6E7B /* InfoPlist.strings in Resources */,
 			);
@@ -315,7 +329,9 @@
 				270CE9BD18945C0A002A6E7B /* MMAppDelegate.m in Sources */,
 				270CE9C618945C0A002A6E7B /* MMMasterViewController.m in Sources */,
 				270CE9B918945C0A002A6E7B /* main.m in Sources */,
+				270CE9F31894AAB1002A6E7B /* MMSundownFormatter.m in Sources */,
 				270CE9C918945C0A002A6E7B /* MMDetailViewController.m in Sources */,
+				270CE9F0189497B8002A6E7B /* NSString+MMFormatterUtils.m in Sources */,
 				270CE9EA18948C6F002A6E7B /* MMAttributedStringMarkdownParserFormatter.m in Sources */,
 				270CE9ED18949139002A6E7B /* MMMarkdownFormatter.m in Sources */,
 			);

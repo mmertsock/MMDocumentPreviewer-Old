@@ -18,8 +18,7 @@
 
 - (NSAttributedString *)attributedStringFromHTMLStringError:(NSError *__autoreleasing *)error
 {
-    NSData *data = [[self stringWithDefaultHTMLWrappers]
-                    dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     
     id attrString = [[NSAttributedString alloc]
                      initWithData:data

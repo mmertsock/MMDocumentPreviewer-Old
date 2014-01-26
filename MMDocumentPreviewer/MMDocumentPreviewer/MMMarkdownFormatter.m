@@ -25,7 +25,7 @@
 {
     NSString *HTML = [MMMarkdown HTMLStringWithMarkdown:string error:error];
     if (error && *error) return nil;
-    return [HTML attributedStringFromHTMLStringError:error];
+    return [[HTML stringWithDefaultHTMLWrappers] attributedStringFromHTMLStringError:error];
 }
 
 @end

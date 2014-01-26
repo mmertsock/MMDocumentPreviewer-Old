@@ -28,6 +28,7 @@
 		270CE9F0189497B8002A6E7B /* NSString+MMFormatterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9EF189497B8002A6E7B /* NSString+MMFormatterUtils.m */; };
 		270CE9F31894AAB1002A6E7B /* MMSundownFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9F21894AAB1002A6E7B /* MMSundownFormatter.m */; };
 		270CE9F51894ACC3002A6E7B /* sample.md in Resources */ = {isa = PBXBuildFile; fileRef = 270CE9F41894ACC3002A6E7B /* sample.md */; };
+		270CE9F81894B4A3002A6E7B /* MMHTMLDirectFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270CE9F71894B4A3002A6E7B /* MMHTMLDirectFormatter.m */; };
 		81738BF7D65644ACB5AA53D5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE9E70B016E45CC80032B14 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		270CE9F11894AAB1002A6E7B /* MMSundownFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSundownFormatter.h; sourceTree = "<group>"; };
 		270CE9F21894AAB1002A6E7B /* MMSundownFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSundownFormatter.m; sourceTree = "<group>"; };
 		270CE9F41894ACC3002A6E7B /* sample.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.md; sourceTree = "<group>"; };
+		270CE9F61894B4A3002A6E7B /* MMHTMLDirectFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHTMLDirectFormatter.h; sourceTree = "<group>"; };
+		270CE9F71894B4A3002A6E7B /* MMHTMLDirectFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHTMLDirectFormatter.m; sourceTree = "<group>"; };
 		DBE9E70B016E45CC80032B14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56CD2D5E53B495D9B97CF73 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +151,8 @@
 				270CE9C718945C0A002A6E7B /* MMDetailViewController.h */,
 				270CE9C818945C0A002A6E7B /* MMDetailViewController.m */,
 				270CE9E718948B91002A6E7B /* MMDocFormatter.h */,
+				270CE9F61894B4A3002A6E7B /* MMHTMLDirectFormatter.h */,
+				270CE9F71894B4A3002A6E7B /* MMHTMLDirectFormatter.m */,
 				270CE9EB18949139002A6E7B /* MMMarkdownFormatter.h */,
 				270CE9EC18949139002A6E7B /* MMMarkdownFormatter.m */,
 				270CE9C418945C0A002A6E7B /* MMMasterViewController.h */,
@@ -156,8 +161,8 @@
 				270CE9F21894AAB1002A6E7B /* MMSundownFormatter.m */,
 				270CE9EE189497B8002A6E7B /* NSString+MMFormatterUtils.h */,
 				270CE9EF189497B8002A6E7B /* NSString+MMFormatterUtils.m */,
-				270CE9B318945C0A002A6E7B /* Supporting Files */,
 				270CE9F41894ACC3002A6E7B /* sample.md */,
+				270CE9B318945C0A002A6E7B /* Supporting Files */,
 			);
 			path = MMDocumentPreviewer;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				270CE9F0189497B8002A6E7B /* NSString+MMFormatterUtils.m in Sources */,
 				270CE9EA18948C6F002A6E7B /* MMAttributedStringMarkdownParserFormatter.m in Sources */,
 				270CE9ED18949139002A6E7B /* MMMarkdownFormatter.m in Sources */,
+				270CE9F81894B4A3002A6E7B /* MMHTMLDirectFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

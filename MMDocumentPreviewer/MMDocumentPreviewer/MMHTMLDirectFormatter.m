@@ -1,26 +1,24 @@
 //
-//  MMSundownFormatter.m
+//  MMHTMLDirectFormatter.m
 //  MMDocumentPreviewer
 //
 //  Created by Mike Mertsock on 1/25/14.
 //  Copyright (c) 2014 Mike Mertsock. All rights reserved.
 //
 
-#import "MMSundownFormatter.h"
+#import "MMHTMLDirectFormatter.h"
 #import "NSString+MMFormatterUtils.h"
-#import <SundownWrapper.h>
 
-@implementation MMSundownFormatter
+@implementation MMHTMLDirectFormatter
 
 - (NSString *)formatterName
 {
-    return @"sundown";
+    return @"HTML Direct";
 }
 
 - (NSAttributedString *)attributedStringForString:(NSString *)string error:(NSError *__autoreleasing *)error
 {
-    NSString *HTML = [SundownWrapper convertMarkdownString:string];
-    return [[HTML stringWithDefaultHTMLWrappers] attributedStringFromHTMLStringError:error];
+    return [string attributedStringFromHTMLStringError:error];
 }
 
 @end

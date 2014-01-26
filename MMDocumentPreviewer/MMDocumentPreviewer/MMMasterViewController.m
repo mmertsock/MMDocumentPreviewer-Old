@@ -13,6 +13,7 @@
 #import "MMAttributedStringMarkdownParserFormatter.h"
 #import "MMMarkdownFormatter.h"
 #import "MMSundownFormatter.h"
+#import "MMHTMLDirectFormatter.h"
 
 @interface MMMasterViewController ()
 @property NSURL *documentURL;
@@ -35,10 +36,15 @@
     [super viewDidLoad];
     self.documentURL = [[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"md"];
     self.URLtextField.text = self.documentURL.absoluteString;
+    self.URLtextField.clearButtonMode = UITextFieldViewModeAlways;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self.URLtextField action:@selector(resignFirstResponder)];
+    
     self.formatters = @[
                         [MMAttributedStringMarkdownParserFormatter new],
                         [MMMarkdownFormatter new],
-                        [MMSundownFormatter new]
+                        [MMSundownFormatter new],
+                        [MMHTMLDirectFormatter new]
                         ];
     self.detailViewController = (MMDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.detailViewController.documentURL = self.documentURL;

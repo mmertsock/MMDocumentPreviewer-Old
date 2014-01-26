@@ -57,6 +57,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.outputTextView.editable = NO;
+    self.outputTextView.dataDetectorTypes = UIDataDetectorTypeNone;
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
